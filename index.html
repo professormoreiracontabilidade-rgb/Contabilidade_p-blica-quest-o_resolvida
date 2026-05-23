@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz NBC TSP 01 - Gasto Tributário</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f3f6fb;
+  color:#222;
+}
+
+.app{
+  max-width:430px;
+  margin:auto;
+  min-height:100vh;
+  padding:14px;
+}
+
+.card{
+  background:white;
+  border-radius:22px;
+  padding:20px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.12);
+  display:none;
+}
+
+.card.active{
+  display:block;
+}
+
+h1{
+  text-align:center;
+  color:#0b3b75;
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+h2{
+  color:#0b3b75;
+  font-size:22px;
+}
+
+.meta{
+  background:#eef4ff;
+  padding:12px;
+  border-radius:14px;
+  font-size:15px;
+  margin-bottom:15px;
+}
+
+.question{
+  font-size:20px;
+  line-height:1.45;
+  font-weight:bold;
+}
+
+.alt{
+  background:#f7f7f7;
+  margin:10px 0;
+  padding:14px;
+  border-radius:14px;
+  font-size:18px;
+  border-left:6px solid #ccc;
+}
+
+.correct{
+  background:#e6f8ea;
+  border-left-color:#148a35;
+  font-weight:bold;
+}
+
+.explain{
+  font-size:19px;
+  line-height:1.55;
+}
+
+.alert{
+  background:#fff4d8;
+  padding:14px;
+  border-radius:14px;
+  margin:14px 0;
+  font-size:18px;
+}
+
+img{
+  width:100%;
+  border-radius:16px;
+  margin-top:12px;
+  border:1px solid #ddd;
+}
+
+.buttons{
+  display:flex;
+  gap:10px;
+  margin-top:18px;
+}
+
+button{
+  flex:1;
+  border:0;
+  border-radius:14px;
+  padding:14px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  background:#0b3b75;
+  color:white;
+}
+
+button.secondary{
+  background:#555;
+}
+
+.footer{
+  text-align:center;
+  margin-top:18px;
+  font-weight:bold;
+  color:#0b3b75;
+  font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <h1>Quiz NBC TSP 01</h1>
+
+  <!-- TELA 1 -->
+  <div class="card active" id="tela1">
+    <div class="meta">
+      Ano: 2026<br>
+      Banca: FGV<br>
+      Órgão: PC-PI<br>
+      Prova: Perito Criminal - Contabilidade e Economia
+    </div>
+
+    <div class="question">
+      Os contribuintes de uma jurisdição têm direito a deduzir os gastos com saúde da base de cálculo da tributação sobre a renda.
+      De acordo com a NBC TSP 01 - Receita de Transação sem Contraprestação, esses gastos tributários, para o governo tributante,
+    </div>
+
+    <div class="alt">A) são classificados como ativo e despesa.</div>
+    <div class="alt">B) correspondem a ativo e receita.</div>
+    <div class="alt">C) representam passivo e despesa.</div>
+    <div class="alt">D) configuram receita e despesa.</div>
+    <div class="alt correct">E) não originam entradas ou saídas de recursos.</div>
+
+    <div class="buttons">
+      <button onclick="mostrarTela(2)">Ver explicação ➜</button>
+    </div>
+  </div>
+
+  <!-- TELA 2 -->
+  <div class="card" id="tela2">
+    <h2>Gabarito: letra E</h2>
+
+    <div class="explain">
+      Os gastos tributários, como deduções, isenções e créditos, reduzem o valor do tributo antes do reconhecimento da receita pelo governo.
+      <br><br>
+      A grande ideia da NBC TSP 01 é que o governo não recebe o valor total para depois devolver uma parte.
+      O valor da dedução simplesmente não entra nos cofres públicos.
+    </div>
+
+    <div class="alert">
+      Portanto, não há reconhecimento de receita bruta nem de despesa.  
+      O governo reconhece apenas o valor líquido efetivamente recebido.
+    </div>
+
+    <div class="explain">
+      Por isso, os gastos tributários não geram:
+      <br><br>
+      ❌ ativo<br>
+      ❌ passivo<br>
+      ❌ receita<br>
+      ❌ despesa<br>
+      ❌ entrada ou saída de recursos
+    </div>
+
+    <div class="buttons">
+      <button class="secondary" onclick="mostrarTela(1)">⬅ Voltar</button>
+      <button onclick="mostrarTela(3)">Ver imagem ➜</button>
+    </div>
+  </div>
+
+  <!-- TELA 3 -->
+  <div class="card" id="tela3">
+    <h2>Resumo visual</h2>
+
+    <div class="explain">
+      Exemplo simples:
+      <br><br>
+      O contribuinte teria R$ 100 de imposto, mas possui R$ 20 de dedução com saúde.
+      Assim, ele paga apenas R$ 80.
+      <br><br>
+      Para o governo, os R$ 20 não entram e também não saem.
+      Eles apenas reduzem o valor a receber.
+    </div>
+
+    <img src="data:image/jpeg;base64,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e83+d87r4exb8ktnXH5ObO54pr2Hka2SMc3ObHy32/ybgfsK/QT2B42I3B5FQuntH4TSrbLcPTNZtlwfK3vHOBI9hJ26+CDk9CdpGmLOhqDreXp07FSqyGxDPIGOaWNDdwDzIO2423XLdnMh1f2yah1fVieMbFGYIZHN24yQ1rf+y0n2bhdxkeyDQ+Tvm5NhWMlc7icIJXxscf8AFaQP1LrcVicfhMfHQxlSKrVj+bFE3YD2+0+1BuIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgbbIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICBERAREQEREBERAREQEREBERAREQEREBERAREQE6pCIiAiIgIiICInggIiICIiAiIgIiICIOuIiAiIgIiICIiAiIgIiICYEREBERAREQEREBERAREQEREBERAREQEREBERATxREQEREBERAREQEREBERAREQEREBERAf/2Q==" alt="Infográfico sobre gasto tributário">
+
+    <div class="alert">
+      Macete: gasto tributário é renúncia fiscal.  
+      Não é dinheiro que entra e sai. É valor que nem chega a entrar.
+    </div>
+
+    <div class="buttons">
+      <button class="secondary" onclick="mostrarTela(2)">⬅ Voltar</button>
+      <button onclick="mostrarTela(1)">Recomeçar</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    Curso de Contabilidade Professor Moreira<br>
+    WhatsApp: (61) 98532-3574
+  </div>
+
+</div>
+
+<script>
+function mostrarTela(numero){
+  document.querySelectorAll('.card').forEach(card => {
+    card.classList.remove('active');
+  });
+
+  document.getElementById('tela' + numero).classList.add('active');
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+</script>
+
+</body>
+</html>
